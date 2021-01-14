@@ -1,0 +1,35 @@
+{
+    "env": {
+        "browser": true,
+        "node": true,
+        "es2021": true
+    },
+    "extends": [
+        "prettier",
+        "prettier/react",
+        "eslint:recommended",
+        "plugin:react/recommended"
+    ],
+    "parser": "babel-eslint",
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": 12,
+        "sourceType": "module"
+    },
+    "plugins": [
+        "react",
+        "eslint-plugin-prettier"
+    ],
+    "rules": {
+        "prettier/prettier": "error",
+        "no-console": "off",
+        "arrow-parens": "off",
+        "semi": ["warn", "always"],
+        "quotes": ["warn", "single", { "allowTemplateLiterals": true }],
+        "no-unused-vars": "warn",
+        "import/prefer-default-export": "off",
+        "indent": ["error", 2]
+    }
+}

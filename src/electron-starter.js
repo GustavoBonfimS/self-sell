@@ -1,4 +1,5 @@
 const { app, BrowserWindow } = require('electron');
+require('dotenv').config();
 const path = require('path');
 const url = require('url');
 
@@ -11,8 +12,13 @@ function createWindow() {
     },
   });
 
-  win.loadFile(path.join(__dirname, '..', 'build', 'index.html'));
-  win.removeMenu();
+  win.loadURL(
+    url.format({
+      pathname: path.join(__dirname, '..', 'build', 'index.html'),
+      protocol: 'file:',
+      slashes: true,
+    }),
+  );
 }
 
 app.whenReady().then(createWindow);

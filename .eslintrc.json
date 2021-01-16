@@ -23,7 +23,8 @@
         "eslint-plugin-prettier"
     ],
     "rules": {
-        "prettier/prettier": "error",
+        "prettier/prettier": "warn",
+        "react/prop-types": "off",
         "no-console": "off",
         "arrow-parens": "off",
         "semi": ["warn", "always"],

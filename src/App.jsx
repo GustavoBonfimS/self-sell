@@ -1,9 +1,10 @@
 import React from 'react';
+import AppMenu from './components/AppMenu';
 
 function App() {
   return (
     <>
-      <h1>hello woraaaaaaaaaaaald</h1>
+      <AppMenu title='Home' />
     </>
   );
 }

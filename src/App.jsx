@@ -1,10 +1,10 @@
 import React from 'react';
-import AppMenu from './components/AppMenu';
+import Routes from './routes';
 
 function App() {
   return (
     <>
-      <AppMenu title='Home' />
+      <Routes />
     </>
   );
 }

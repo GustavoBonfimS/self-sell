@@ -2,6 +2,8 @@ const { app, BrowserWindow } = require('electron');
 require('dotenv').config();
 const path = require('path');
 const url = require('url');
+require('electron-reload')
+const isDev = require('electron-is-dev');
 
 function createWindow() {
   const win = new BrowserWindow({
@@ -11,13 +13,12 @@ function createWindow() {
       nodeIntegration: true,
     },
   });
+  win.removeMenu();
 
   win.loadURL(
-    url.format({
-      pathname: path.join(__dirname, '..', 'build', 'index.html'),
-      protocol: 'file:',
-      slashes: true,
-    }),
+    isDev
+      ? 'http://localhost:3000'
+      : `file://${path.join(__dirname, '../build/index.html')}`,
   );
 }
 

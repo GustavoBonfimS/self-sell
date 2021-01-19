@@ -21,7 +21,7 @@ import {
 } from '@material-ui/icons';
 
 export default function AppMenu(props) {
-  const [openDrawer, setOpenDrawer] = useState(true);
+  const [openDrawer, setOpenDrawer] = useState(false);
 
   return (
     <>

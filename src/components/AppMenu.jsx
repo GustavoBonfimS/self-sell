@@ -49,19 +49,17 @@ export default function AppMenu(props) {
         </div>
         <Divider />
         <List>
-          {['Pagina inicial', 'Produtos', 'Pedidos', 'Relatório'].map(
-            (text) => (
-              <ListItem button key={text}>
-                <ListItemIcon>
-                  {text === 'Pagina inicial' && <Home />}
-                  {text === 'Produtos' && <LocalGroceryStore />}
-                  {text === 'Pedidos' && <LocalMall />}
-                  {text === 'Relatório' && <Assessment />}
-                </ListItemIcon>
-                <ListItemText primary={text} />
-              </ListItem>
-            ),
-          )}
+          {['Pagina inicial', 'Produtos', 'Pedidos', 'Relatório'].map(text => (
+            <ListItem button key={text}>
+              <ListItemIcon>
+                {text === 'Pagina inicial' && <Home />}
+                {text === 'Produtos' && <LocalGroceryStore />}
+                {text === 'Pedidos' && <LocalMall />}
+                {text === 'Relatório' && <Assessment />}
+              </ListItemIcon>
+              <ListItemText primary={text} />
+            </ListItem>
+          ))}
         </List>
         {/* <Divider />
         <List>

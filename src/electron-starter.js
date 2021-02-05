@@ -1,8 +1,8 @@
-const { app, BrowserWindow } = require('electron');
 require('dotenv').config();
+require('electron-reload');
+require('./api/server');
+const { app, BrowserWindow } = require('electron');
 const path = require('path');
-const url = require('url');
-require('electron-reload')
 const isDev = require('electron-is-dev');
 
 function createWindow() {

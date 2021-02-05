@@ -2,7 +2,7 @@
     "env": {
         "browser": true,
         "node": true,
-        "es2021": true
+        "es2021": false
     },
     "extends": [
         "prettier",
@@ -10,7 +10,6 @@
         "eslint:recommended",
         "plugin:react/recommended"
     ],
-    "parser": "babel-eslint",
     "parserOptions": {
         "ecmaFeatures": {
             "jsx": true

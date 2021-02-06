@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import {
   Drawer,
   AppBar,
@@ -21,7 +22,36 @@ import {
 } from '@material-ui/icons';
 
 export default function AppMenu(props) {
+  const history = useHistory();
   const [openDrawer, setOpenDrawer] = useState(false);
+
+  function handleMenuClick(path) {
+    setOpenDrawer(false);
+    history.push(path);
+  }
+
+  const options = [
+    {
+      title: 'Pagina Inicial',
+      path: '/',
+      icon: Home,
+    },
+    {
+      title: 'Produtos',
+      path: '/',
+      icon: LocalGroceryStore,
+    },
+    {
+      title: 'Pedidos',
+      path: '/',
+      icon: LocalMall,
+    },
+    {
+      title: 'Relatório',
+      path: '/',
+      icon: Assessment,
+    },
+  ];
 
   return (
     <>
@@ -29,7 +59,6 @@ export default function AppMenu(props) {
         <Toolbar variant='dense'>
           <IconButton
             edge='start'
-            className=''
             color='inherit'
             aria-label='menu'
             onClick={() => setOpenDrawer(true)}
@@ -49,16 +78,13 @@ export default function AppMenu(props) {
         </div>
         <Divider />
         <List>
-          {['Pagina inicial', 'Produtos', 'Pedidos', 'Relatório'].map(text => (
-            <ListItem button key={text}>
-              <ListItemIcon>
-                {text === 'Pagina inicial' && <Home />}
-                {text === 'Produtos' && <LocalGroceryStore />}
-                {text === 'Pedidos' && <LocalMall />}
-                {text === 'Relatório' && <Assessment />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem>
+          {options.map(page => (
+            <div onClick={() => handleMenuClick(page.path)} key={page.path}>
+              <ListItem button>
+                <ListItemIcon>{<page.icon />}</ListItemIcon>
+                <ListItemText primary={page.title} />
+              </ListItem>
+            </div>
           ))}
         </List>
         {/* <Divider />

@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const ProductsRoutes = require('./ProductsRoutes');
-const RequestRoutes = require('./RequestsRoutes');
+const RequestsRoutes = require('./RequestsRoutes');
+const ReportsRoutess = require('./ReportsRoutes');
 
 router.get('/', (req, res) => {
   return res.json({
@@ -9,6 +10,7 @@ router.get('/', (req, res) => {
 });
 
 router.use('/product', ProductsRoutes);
-router.use('/request', RequestRoutes);
+router.use('/request', RequestsRoutes);
+router.use('/report', ReportsRoutess);
 
 module.exports = router;

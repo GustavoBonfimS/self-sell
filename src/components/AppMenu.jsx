@@ -38,7 +38,7 @@ export default function AppMenu(props) {
     },
     {
       title: 'Produtos',
-      path: '/',
+      path: '/products',
       icon: LocalGroceryStore,
     },
     {
@@ -86,6 +86,15 @@ export default function AppMenu(props) {
               </ListItem>
             </div>
           ))}
+        </List>
+        <Divider />
+        <List>
+          <ListItem button>
+            <ListItemIcon>
+              <Close />
+            </ListItemIcon>
+            <ListItemText primary='Sair do sistema' />
+          </ListItem>
         </List>
         {/* <Divider />
         <List>

@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import {
   BarChart,
   Bar,
@@ -8,10 +8,14 @@ import {
   Tooltip,
   Legend,
 } from 'recharts';
+import { useHistory } from 'react-router-dom';
+import { Button } from '@material-ui/core';
 
 import AppMenu from '../components/AppMenu';
+import Copyright from '../components/Copyright';
 
 export default function Home() {
+  const history = useHistory();
   const produtos = [
     {
       idProduto: 1,
@@ -75,9 +79,28 @@ export default function Home() {
             <p className='text-muted'>
               Não deixe faltar produtos para seus clientes, fique de olho!
             </p>
+            <p className='text-muted'>
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry standard dummy text
+              ever since the 1500s, when an unknown printer took a galley of
+              type and scrambled it to make a type specimen book. It has
+              survived not only five centuries, but also the leap into
+              electronic typesetting, remaining essentially unchanged. It was
+              popula
+            </p>
           </div>
         </div>
+
+        <div className='d-flex justify-content-between py-5'>
+          <Button color='primary' onClick={() => history.push('/products')}>
+            Produtos
+          </Button>
+          <Button color='primary'>Pedidos</Button>
+          <Button color='primary'>Visualizar relatório</Button>
+        </div>
       </div>
+
+      <Copyright />
     </>
   );
 }

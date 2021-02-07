@@ -14,6 +14,7 @@ function createWindow() {
     },
   });
   win.removeMenu();
+  win.maximize();
 
   win.loadURL(
     isDev

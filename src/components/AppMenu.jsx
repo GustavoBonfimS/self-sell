@@ -39,6 +39,10 @@ export default function AppMenu(props) {
     darkmode.toggle();
   }
 
+  function handleTabClose() {
+    window.close();
+  }
+
   const options = [
     {
       title: 'Pagina Inicial',
@@ -98,12 +102,6 @@ export default function AppMenu(props) {
         </List>
         <Divider />
         <List>
-          <ListItem button>
-            <ListItemIcon>
-              <Close />
-            </ListItemIcon>
-            <ListItemText primary='Sair do sistema' />
-          </ListItem>
           <div onClick={handleDarkmodeSwitch}>
             <ListItem button>
               <ListItemIcon>
@@ -112,6 +110,14 @@ export default function AppMenu(props) {
               <ListItemText
                 primary={darkmode.isActivated() ? 'Modo claro' : 'Modo escuro'}
               />
+            </ListItem>
+          </div>
+          <div onClick={handleTabClose}>
+            <ListItem button>
+              <ListItemIcon>
+                <Close />
+              </ListItemIcon>
+              <ListItemText primary='Sair do sistema' />
             </ListItem>
           </div>
         </List>

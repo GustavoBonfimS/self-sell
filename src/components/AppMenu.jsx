@@ -19,7 +19,11 @@ import {
   LocalGroceryStore,
   LocalMall,
   Assessment,
+  Brightness2,
+  WbSunny,
 } from '@material-ui/icons';
+import Darkmode from 'darkmode-js';
+const darkmode = new Darkmode();
 
 export default function AppMenu(props) {
   const history = useHistory();
@@ -28,6 +32,11 @@ export default function AppMenu(props) {
   function handleMenuClick(path) {
     setOpenDrawer(false);
     history.push(path);
+  }
+
+  function handleDarkmodeSwitch() {
+    setOpenDrawer(false);
+    darkmode.toggle();
   }
 
   const options = [
@@ -55,7 +64,7 @@ export default function AppMenu(props) {
 
   return (
     <>
-      <AppBar position='static'>
+      <AppBar position='static' className='darkmode-ignore'>
         <Toolbar variant='dense'>
           <IconButton
             edge='start'
@@ -95,18 +104,17 @@ export default function AppMenu(props) {
             </ListItemIcon>
             <ListItemText primary='Sair do sistema' />
           </ListItem>
-        </List>
-        {/* <Divider />
-        <List>
-          {['All mail', 'Trash', 'Spam'].map((text) => (
-            <ListItem button key={text}>
+          <div onClick={handleDarkmodeSwitch}>
+            <ListItem button>
               <ListItemIcon>
-                <ArrowForward />
+                {darkmode.isActivated() ? <WbSunny /> : <Brightness2 />}
               </ListItemIcon>
-              <ListItemText primary={text} />
+              <ListItemText
+                primary={darkmode.isActivated() ? 'Modo claro' : 'Modo escuro'}
+              />
             </ListItem>
-          ))}
-        </List> */}
+          </div>
+        </List>
       </Drawer>
     </>
   );

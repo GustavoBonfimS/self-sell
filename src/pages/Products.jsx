@@ -6,7 +6,7 @@ import Copyright from '../components/Copyright';
 export default function Products() {
   return (
     <>
-      <AppMenu title='Produtos'     />
+      <AppMenu title='Produtos' />
       <div className='container'>
         <h1>Produtos</h1>
       </div>
